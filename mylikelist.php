@@ -14,6 +14,7 @@ $con=mysqli_connect(DB_HOST,DB_USER,DB_PASSWORD,DB_NAME) or die("Failed to conne
    <body>
        <?php include("includes/head-side.html"); ?>
        <div class="w3-main" style="margin-left:300px">
+	       <h2>My LikeList</h2>
 <div id="body">
     <?php while($req=mysqli_fetch_array($query2)){ 
         $query3 = mysqli_query($con,"SELECT * from post JOIN personal_det on post.user_id=personal_det.user_id WHERE post_id = '$req[post_id]'") or die(mysqli_error($con));
