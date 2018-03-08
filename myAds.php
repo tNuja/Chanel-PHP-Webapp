@@ -23,14 +23,42 @@ $ret=mysqli_fetch_array($query);
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="includes/w3-style.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
    <body>
        <?php include("includes/head-side.html"); ?>
        <div class="w3-main" style="margin-left:300px; font-family:'Lato',sans-serif">
            <h2>About me</h2> 
            <img src="<?php echo ucwords($rab['pro_pic']);?>" 
      alt="pic" style="border-radius:50%; height:250px; width:250px; padding:7px; -webkit-box-shadow:  0px 0px 5px 1px #FFD57D;
-        box-shadow:  0px 0px 5px 1px #FFD57D; "/> <i class="fa fa-pencil fa-fw w3-button"></i>
-           <h5><?php echo $rab['status']; ?></h5> 
+        box-shadow:  0px 0px 5px 1px #FFD57D; "/> 
+           <?php if (!isset($_POST['port'])){ ?>
+           <button title="detail" data-toggle="modal" data-target="#myModal" style="background-color:transparent;border:none;color:#217c76"><i class="fa fa-pencil w3-button"></i></button>
+      <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h3 class="modal-title">About You</h3>
+        </div>
+        <div class="modal-body">
+          <form action="addAbout.php" method="post" enctype="multipart/form-data">
+              <h4> Add a Profile Picture</h4>
+              <label for="photo"></label>
+              <i class="fa fa-file-image-o"></i><input type="file" name="photo" id="photo">
+     <br/><span class="valid"></span>
+              <textarea name='textm' cols='60' rows='10' placeholder="Write about yourself"></textarea>
+          <button type="submit" class="btn btn-default">Submit</button>
+          </form>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+           <?php } ?>
+           <h4><?php echo $rab['status']; ?></h4> 
            <h2><?php echo $ret['user_Name']; ?>  - Active works </h2>
 <div id="body">
     <?php
