@@ -2,7 +2,20 @@
 require_once("includes/constDatabase.php");
 require_once("includes/user_session.php");
 $con=mysqli_connect(DB_HOST,DB_USER,DB_PASSWORD,DB_NAME) or die("Failed to connect to database: " . mysqli_error($con));
-if(isset($_POST['textm']) && isset($_FILES['photo']['name'])) {
+if(isset($_POST['num']) ){
+    $num=$_POST['num'];
+    if($num!=''){
+    $query_insert="UPDATE `personal_det` set `contactNo`='$num' where user_id='$userid'";
+$insertiontodatabase=mysqli_query($con,$query_insert) or die(mysqli_error($con)); }}
+    
+    if(isset($_POST['loct'])){
+    $loc=$_POST['loct'];
+    if($loc!=''){
+    $query_insert="UPDATE `personal_det` set `loc`='$loc' where user_id='$userid'";
+    $insertiontodatabase=mysqli_query($con,$query_insert) or die(mysqli_error($con));}}
+    
+    
+if(isset($_POST['textm']) || isset($_FILES['photo']['name'])) {
 $ab=$_POST['textm'];
 $name_photo=$_FILES['photo']['name'];
 $type_photo=$_FILES['photo']['type'];
@@ -39,3 +52,4 @@ if($type_photo=="image/jpg" || $type_photo=="image/jpeg" || $type_photo=="image/
 	}
 }
 ?>
+
