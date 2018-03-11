@@ -30,7 +30,7 @@ $ret=mysqli_fetch_array($query);
        <?php include("includes/head-side.html"); ?>
        <div class="w3-main" style="margin-left:300px; font-family:'Lato',sans-serif">
            <h2>About me</h2> 
-           <img src="<?php echo ucwords($rab['pro_pic']);?>" 
+           <img src="<?php echo ($rab['pro_pic']);?>" 
      alt="pic" style="border-radius:50%; height:250px; width:250px; padding:7px; -webkit-box-shadow:  0px 0px 5px 1px #FFD57D;
         box-shadow:  0px 0px 5px 1px #FFD57D; "/> 
            <?php if (!isset($_POST['port'])){ ?>
@@ -76,7 +76,7 @@ else {
     <td colspan="2" class="adtitle"><span style="color:#666;"><?php echo $rec['title']; ?></span></td>
   </tr>
   <tr>
-    <td rowspan="3" id="adpic"><img src="<?php echo ucwords($rec['post_img']);?>"
+    <td rowspan="3" id="adpic"><img src="<?php echo ($rec['post_img']);?>"
      alt="pic" style="border-radius:40%; height:250px; width:250px; padding:7px; -webkit-box-shadow:  0px 0px 5px 1px #FFD57D;
         box-shadow:  0px 0px 5px 1px #FFD57D; "/></td>
     
