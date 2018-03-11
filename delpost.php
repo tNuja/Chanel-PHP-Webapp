@@ -1,4 +1,4 @@
-<?php require_once("includes/user_session.php");?>
+
 <?php require_once("includes/constDatabase.php"); 
 $con=mysqli_connect(DB_HOST,DB_USER,DB_PASSWORD,DB_NAME) or die("Failed to connect to database: " . mysqli_error($con));
 if(isset($_POST['delete']))
