@@ -119,7 +119,7 @@ img.avatar {
     <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
 
     <div class="clearfix">
-      <button type="button" class="cancelbtn">Cancel</button>
+        <button type="button" class="cancelbtn"><a href="index.html" style="color:white">Cancel</a></button>
       <button type="submit" class="signupbtn">Sign Up</button>
     </div>
   </div>
