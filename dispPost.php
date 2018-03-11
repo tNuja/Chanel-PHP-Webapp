@@ -29,7 +29,7 @@ if(isset($_POST['details']))
       <td colspan="2" class="adtitle"><span style="color:#666;"><?php echo $ret['title']; ?></span></td>
   </tr>
   <tr>
-    <td rowspan="3" id="adpic"><img src="<?php echo ucwords($ret['post_img']);?>"
+    <td rowspan="3" id="adpic"><img src="<?php echo ($ret['post_img']);?>"
      alt="pic" style="border-radius:50%; height:250px; width:250px; padding:7px; -webkit-box-shadow:  0px 0px 5px 1px #FFD57D;
         
         box-shadow:  0px 0px 5px 1px #FFD57D; "/></td>
