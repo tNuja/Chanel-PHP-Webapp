@@ -24,7 +24,7 @@ $con=mysqli_connect(DB_HOST,DB_USER,DB_PASSWORD,DB_NAME) or die("Failed to conne
     <td colspan="2" class="adtitle"><span style="color:#666;"><?php echo $rex['title']; ?></span></td>
   </tr>
   <tr>
-    <td rowspan="3" id="adpic"><img src="<?php echo ucwords($rex['post_img']);?>"
+    <td rowspan="3" id="adpic"><img src="<?php echo ($rex['post_img']);?>"
      alt="pic" style="border-radius:40%; height:250px; width:250px; padding:7px; -webkit-box-shadow:  0px 0px 5px 1px #FFD57D;
      box-shadow:  0px 0px 5px 1px #FFD57D; "/>
     
