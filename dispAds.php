@@ -33,7 +33,7 @@ else {
     <td colspan="2" class="adtitle"><span style="color:#666;"><?php echo $rec['title']; ?></span></td>
   </tr>
   <tr>
-    <td rowspan="3" id="adpic"><img src="<?php echo ucwords($rec['post_img']);?>"
+    <td rowspan="3" id="adpic"><img src="<?php echo ($rec['post_img']);?>"
      alt="pic" style="border-radius:40%; height:250px; width:250px; padding:7px; -webkit-box-shadow:  0px 0px 5px 1px #FFD57D;
      box-shadow:  0px 0px 5px 1px #FFD57D; "/>
     <?php if (mysqli_num_rows($results) == 1 ): ?>
